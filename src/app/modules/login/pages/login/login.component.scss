@@ -1,0 +1,261 @@
+/**
+ * Copyright © 2016-2025 The Thingsboard Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+@import '../../../../../scss/constants';
+@import '../../../../../theme';
+
+:host {
+  display: flex;
+  flex: 1 1 0;
+  .tb-login-content {
+    margin: 0;
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // Efeito de luz de fundo
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .tb-login-form {
+      @media #{$mat-gt-xs} {
+        width: 400px !important;
+      }
+
+      .forgot-password {
+        padding: 0 0 12px;
+        .tb-reset-password {
+          padding: 0 6px;
+          color: #23a6d5;
+          font-weight: 500;
+          &:hover {
+            color: #1a7fa6;
+          }
+        }
+      }
+
+      .tb-action-button {
+        padding: 12px 0;
+        button {
+          width: 100%;
+          height: 44px;
+          font-size: 16px;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          background: linear-gradient(135deg, #23a6d5 0%, #23d5ab 100%) !important;
+          color: white !important;
+          border: none !important;
+          border-radius: 8px !important;
+          box-shadow: 0 4px 15px rgba(35, 166, 213, 0.3) !important;
+          transition: all 0.3s ease !important;
+
+          &:hover {
+            background: linear-gradient(135deg, #1a7fa6 0%, #1aa688 100%) !important;
+            box-shadow: 0 6px 20px rgba(35, 166, 213, 0.4) !important;
+            transform: translateY(-2px);
+          }
+
+          &:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 10px rgba(35, 166, 213, 0.2) !important;
+          }
+
+          &:disabled {
+            background: rgba(255, 255, 255, 0.1) !important;
+            box-shadow: none !important;
+            transform: none !important;
+          }
+        }
+      }
+    }
+
+    .oauth-container{
+      padding: 0;
+
+      .container-divider {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        .line {
+          flex: 1;
+        }
+
+        .mat-divider-horizontal{
+          position: relative;
+        }
+
+        .text {
+          padding-right: 10px;
+          padding-left: 10px;
+        }
+      }
+
+      .material-icons{
+        width: 20px;
+        min-width: 20px;
+      }
+
+      a.login-with-button {
+        color: rgba(black, 0.87);
+        background-color: map-get($tb-dark-theme-background, raised-button);
+
+        &:hover {
+          border-bottom: 0;
+        }
+
+        .icon {
+          height: 20px;
+          width: 20px;
+        }
+      }
+    }
+
+    // Cartão moderno: fundo branco, cantos arredondados e sombra suave
+    mat-card, .mat-mdc-card {
+      background-color: #1e1e1e;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      color: #fff;
+    }
+
+    // Botão de ação com cor primária que combina com o gradiente
+    .tb-action-button button.mat-mdc-raised-button {
+      background-color: #2196f3;
+      color: #fff;
+    }
+  }
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// Estilo do cartão com tema escuro
+::ng-deep .mat-mdc-card {
+  background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  position: relative !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  width: fit-content;
+
+  // Campos de input com tema escuro
+  .mat-mdc-form-field {
+    margin-bottom: 16px;
+    background: #333333;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 4px 16px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: #383838;
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    &.mat-focused {
+      background: #404040;
+      border-color: #23a6d5;
+      box-shadow: 0 0 15px rgba(35, 166, 213, 0.1);
+    }
+
+    .mat-mdc-form-field-flex {
+      background: transparent !important;
+      padding: 0 !important;
+      height: 44px;
+      align-items: center;
+    }
+
+    input {
+      color: white !important;
+      font-size: 15px;
+      padding: 0 8px;
+      height: 100%;
+      caret-color: #23a6d5;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
+
+    .mat-icon {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 20px;
+      transition: color 0.3s ease;
+    }
+
+    &.mat-focused .mat-icon {
+      color: #23a6d5;
+    }
+
+    .mat-mdc-form-field-label {
+      color: rgba(255, 255, 255, 0.7) !important;
+      font-size: 14px;
+    }
+
+    .mat-mdc-form-field-required-marker {
+      color: #23a6d5;
+    }
+
+    .mdc-line-ripple {
+      display: none;
+    }
+  }
+
+  // Mensagens de erro
+  .mat-error {
+    color: #ff4d4d !important;
+    font-size: 12px;
+    margin-top: 4px;
+    padding-left: 16px;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: "⚠";
+      margin-right: 4px;
+    }
+  }
+}
+

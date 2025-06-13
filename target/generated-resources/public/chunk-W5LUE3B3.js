@@ -1,0 +1,1 @@
+import{e as f,i as t}from"./chunk-GHMOB5KC.js";var i=f((o,e)=>{t();(function(){ace.require(["ace/snippets/text"],function(c){typeof e=="object"&&typeof o=="object"&&e&&(e.exports=c)})})()});export default i();
