@@ -22,5 +22,5 @@ export const environment = {
 // @ts-ignore
   supportedLangs: SUPPORTED_LANGS,
   defaultLang: 'en_US',
-  tbApiBaseUrl: 'https://tb.smart-byte.dev'
+  tbApiBaseUrl: ''
 };

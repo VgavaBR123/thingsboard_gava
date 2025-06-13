@@ -69,19 +69,9 @@ export abstract class WebsocketService<T extends WsSubscriber> implements WsServ
       }
     );
 
-    let port = this.window.location.port;
-    if (this.window.location.protocol === 'https:') {
-      if (!port) {
-        port = '443';
-      }
-      this.wsUri = 'wss:';
-    } else {
-      if (!port) {
-        port = '80';
-      }
-      this.wsUri = 'ws:';
-    }
-    this.wsUri += `//${this.window.location.hostname}:${port}/${apiEndpoint}`;
+    const protocol = this.window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+    const host = this.window.location.host;
+    this.wsUri = `${protocol}//${host}/${apiEndpoint}`;
   }
 
   abstract subscribe(subscriber: WsSubscriber);
