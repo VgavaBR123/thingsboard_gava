@@ -51,6 +51,7 @@ export class HomeComponent extends PageComponent implements AfterViewInit, OnIni
 
   sidenavMode: 'over' | 'push' | 'side' = 'side';
   sidenavOpened = true;
+  isSidenavCollapsed = false;
 
   logo = 'assets/logo_title_white.svg';
 
@@ -117,6 +118,10 @@ export class HomeComponent extends PageComponent implements AfterViewInit, OnIni
     if (this.sidenavMode === 'over') {
       this.sidenav.toggle();
     }
+  }
+
+  toggleSidenav() {
+    this.isSidenavCollapsed = !this.isSidenavCollapsed;
   }
 
   toggleFullscreen() {

@@ -1,3 +1,5 @@
+@import "constants";
+
 /**
  * Copyright © 2016-2025 The Thingsboard Authors
  *
@@ -27,28 +29,35 @@
   }
 
   .tb-side-menu > li {
-    border-bottom: 1px solid rgba(0, 0, 0, .12);
+    border-bottom: none;
   }
 
   a.mat-mdc-button.mat-mdc-button-base {
     display: inline-flex;
-    width: 100%;
-    height: 40px;
+    width: calc(100% - 16px);
+    height: 44px;
+    margin: 4px 8px;
     align-items: center;
     overflow: hidden;
-    line-height: 40px;
-    border-radius: 0;
+    line-height: 44px;
+    border-radius: 4px;
     padding: 0 16px;
+    transition: background-color 0.3s ease;
+
     &:hover {
       border-bottom: none;
-      background-color: rgba(255,255,255,0.08);
+      background-color: rgba(255, 255, 255, 0.1);
     }
+
     &:focus {
       border-bottom: none;
     }
+
     &.tb-active {
-      background-color: rgba(255, 255, 255, .15);
+      background-color: $tb-secondary-color;
+      color: #fff;
     }
+
     .mat-icon {
       margin-right: 8px;
       margin-left: 0;
@@ -70,5 +79,21 @@
         padding-bottom: 12px;
       }
     }
+  }
+
+  .tb-side-menu.collapsed {
+    a.mat-mdc-button.mat-mdc-button-base {
+      .mdc-button__label > span {
+        display: none;
+      }
+
+      .mat-icon {
+        margin: auto;
+      }
+    }
+  }
+
+  .tb-side-menu {
+    font-family: "Work Sans", sans-serif;
   }
 }

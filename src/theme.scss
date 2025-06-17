@@ -67,6 +67,7 @@ $tb-mat-theme: mat.m2-define-light-theme((
     accent: $tb-accent
   ),
   typography: mat.m2-define-typography-config(
+    $font-family: '"Work Sans", sans-serif',
     $button: mat.m2-define-typography-level(14px, 36px, 500, $letter-spacing: 0.03125em)
   ),
   density: 0
@@ -138,7 +139,9 @@ $tb-dark-theme: mat.m2-define-dark-theme((
     primary: $tb-dark-primary,
     accent: $tb-accent
   ),
-  typography: mat.m2-define-typography-config(),
+  typography: mat.m2-define-typography-config(
+    $font-family: '"Work Sans", sans-serif',
+  ),
   density: 0
 ));
 

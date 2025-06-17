@@ -15,7 +15,7 @@
     limitations under the License.
 
 -->
-<mat-sidenav-container>
+<mat-sidenav-container [class.sidenav-collapsed]="isSidenavCollapsed">
   <mat-sidenav #sidenav class="tb-site-sidenav mat-elevation-z2"
                [disableClose]="sidenavOpened"
                (click)="sidenavClicked()"
@@ -27,10 +27,13 @@
           <img [src]="logo"
                aria-label="logo" class="tb-logo-title"/>
         </div>
+        <button mat-icon-button class="tb-toggle-button" (click)="toggleSidenav()">
+          <mat-icon>{{ isSidenavCollapsed ? 'menu' : 'chevron_left' }}</mat-icon>
+        </button>
       </mat-toolbar>
     </header>
     <mat-toolbar color="primary" class="tb-side-menu-toolbar flex flex-1 flex-col" role="navigation">
-      <tb-side-menu></tb-side-menu>
+      <tb-side-menu [collapsed]="isSidenavCollapsed"></tb-side-menu>
     </mat-toolbar>
   </mat-sidenav>
   <mat-sidenav-content>

@@ -22,7 +22,7 @@
 @import './scss/animations';
 @import './scss/mixins';
 @import './scss/fonts';
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 body, html {
   height: 100%;
@@ -71,7 +71,7 @@ select,
 textarea,
 td,
 th {
-  font-family: 'Kanit', sans-serif;
+  font-family: sans-serif;
   font-size: 16px;
 }
 
@@ -1297,7 +1297,7 @@ pre.tb-highlight {
 
 // Override tipografia padrão do Angular Material
 .mat-typography {
-  font-family: 'Kanit', sans-serif;
+  font-family: sans-serif;
 }
 
 /***************

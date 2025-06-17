@@ -14,7 +14,7 @@
 /// limitations under the License.
 ///
 
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { MenuService } from '@core/services/menu.service';
 import { MenuSection } from '@core/services/menu.models';
 
@@ -25,6 +25,9 @@ import { MenuSection } from '@core/services/menu.models';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SideMenuComponent implements OnInit {
+
+  @Input()
+  collapsed: boolean;
 
   menuSections$ = this.menuService.menuSections();
 
