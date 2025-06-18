@@ -22,7 +22,6 @@ import { AuthGuard } from '@core/guards/auth.guard';
 import { ResetPasswordRequestComponent } from '@modules/login/pages/login/reset-password-request.component';
 import { ResetPasswordComponent } from '@modules/login/pages/login/reset-password.component';
 import { CreatePasswordComponent } from '@modules/login/pages/login/create-password.component';
-import { CreatePasswordCustomComponent } from '@modules/login/pages/login/create-password-custom.component';
 import { TwoFactorAuthLoginComponent } from '@modules/login/pages/login/two-factor-auth-login.component';
 import { Authority } from '@shared/models/authority.enum';
 import { LinkExpiredComponent } from '@modules/login/pages/login/link-expired.component';
@@ -67,7 +66,7 @@ const routes: Routes = [
   },
   {
     path: 'login/createPassword',
-    component: CreatePasswordCustomComponent,
+    component: CreatePasswordComponent,
     data: {
       title: 'login.create-password',
       module: 'public'

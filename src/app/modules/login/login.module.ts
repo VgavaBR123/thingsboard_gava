@@ -23,7 +23,6 @@ import { SharedModule } from '@app/shared/shared.module';
 import { ResetPasswordRequestComponent } from '@modules/login/pages/login/reset-password-request.component';
 import { ResetPasswordComponent } from '@modules/login/pages/login/reset-password.component';
 import { CreatePasswordComponent } from '@modules/login/pages/login/create-password.component';
-import { CreatePasswordCustomComponent } from '@modules/login/pages/login/create-password-custom.component';
 import { TwoFactorAuthLoginComponent } from '@modules/login/pages/login/two-factor-auth-login.component';
 import { LinkExpiredComponent } from '@modules/login/pages/login/link-expired.component';
 
@@ -33,7 +32,6 @@ import { LinkExpiredComponent } from '@modules/login/pages/login/link-expired.co
     ResetPasswordRequestComponent,
     ResetPasswordComponent,
     CreatePasswordComponent,
-    CreatePasswordCustomComponent,
     TwoFactorAuthLoginComponent,
     LinkExpiredComponent
   ],
