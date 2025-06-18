@@ -97,11 +97,19 @@ export class HomeComponent extends PageComponent implements AfterViewInit, OnIni
           }
         }
       );
+
+    if (screenfull.isEnabled) {
+      screenfull.on('change', () => {
+        // O próprio Angular Material recalcula o layout quando autosize está ativo.
+      });
+    }
   }
 
   ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();
+
+    // Nenhum listener registrado explicitamente, nada para remover.
   }
 
   ngAfterViewInit() {

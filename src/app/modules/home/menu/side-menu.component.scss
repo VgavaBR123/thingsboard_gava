@@ -1,4 +1,5 @@
 @import "constants";
+@import "../../../../assets/fonts/switzer.css";
 
 /**
  * Copyright © 2016-2025 The Thingsboard Authors
@@ -94,6 +95,7 @@
   }
 
   .tb-side-menu {
-    font-family: "Work Sans", sans-serif;
+    font-family: "Switzer", "Work Sans", sans-serif;
+    font-weight: 500;
   }
 }

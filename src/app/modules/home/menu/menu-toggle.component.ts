@@ -38,9 +38,16 @@ export class MenuToggleComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * Calcula dinamicamente a altura do container do submenu.
+   * Cada item ocupa 44 px de altura + 8 px de margens verticais (4 px superior e 4 px inferior),
+   * totalizando 52 px. Desta forma evitamos que o último item seja cortado
+   * quando o submenu estiver expandido.
+   */
   sectionHeight(): string {
     if (this.section.opened) {
-      return this.section.pages.length * 40 + 'px';
+      const itemHeight = 52; // 44px (altura do botão) + 8px (margens verticais)
+      return this.section.pages.length * itemHeight + 'px';
     } else {
       return '0px';
     }
